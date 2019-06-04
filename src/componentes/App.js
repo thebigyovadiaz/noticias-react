@@ -15,7 +15,7 @@ class App extends Component {
   consultarNoicias = (categoria='general') => {
 
     let url = `https://newsapi.org/v2/top-headlines?country=ve&category=${categoria}&apiKey=90bbc7f64eeb41249cf5b557c15ba0e3`;
-    
+
     fetch(url)
       .then(res => res.json())
       .then(noticias => {
@@ -26,14 +26,14 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  render() { 
+  render() {
     return (
       <div className="contenedor-app">
-        <Header titulo="Noticias" />
+        <Header titulo="Noticias React API" />
 
         <div className="container white contenedor-noticias">
           <Formulario consultarNoicias={this.consultarNoicias} />
-          <Noticias 
+          <Noticias
             noticias={this.state.noticias}
           />
         </div>
@@ -41,5 +41,5 @@ class App extends Component {
     );
   }
 }
- 
+
 export default App;
